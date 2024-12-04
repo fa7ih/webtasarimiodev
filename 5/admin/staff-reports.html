@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .actions button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .actions .edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .actions .delete {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zınk Hastanesi | Personel Raporları</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" alt="Zınk Hastanesi Logo" class="app-logo" width="31" height="31">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="page-title">
+                        <h3>Personel Raporları</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">Personel Listesi</div>
+                                <div class="card-body">
+                                    <form class="row g-3">
+                                        <div class="col-md-3">
+                                            <label for="personelTc" class="form-label">Personel T.C. No</label>
+                                            <input type="text" class="form-control" id="personelTc" placeholder="Personel T.C. No">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="doktorSecim" class="form-label">Doktor Seçimi</label>
+                                            <select id="doktorSecim" class="form-select">
+                                                <option selected>Tüm Doktorlar</option>
+                                                <!-- Add the same list of doctors here -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="departmanSecim" class="form-label">Departman Seçimi</label>
+                                            <select id="departmanSecim" class="form-select">
+                                                <option selected>Tüm Departmanlar</option>
+                                                <!-- List of departments can go here -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <button type="button" class="btn btn-primary btn-block">
+                                                <i class="fas fa-filter"></i> Filtrele
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Personel No</th>
+                                                <th>Personel Adı</th>
+                                                <th>Pozisyon</th>
+                                                <th>Başlangıç Tarihi</th>
+                                                <th>Durum</th>
+                                                <th>İşlemler</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2001</td>
+                                                <td>Dr. Ahmet Yılmaz</td>
+                                                <td>Kardiyolog</td>
+                                                <td>01/01/2020</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2002</td>
+                                                <td>Dr. Ayşe Demir</td>
+                                                <td>Ortopedi Uzmanı</td>
+                                                <td>15/03/2021</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2003</td>
+                                                <td>Hemşire Zeynep Kara</td>
+                                                <td>Hemşire</td>
+                                                <td>22/06/2022</td>
+                                                <td>Taburcu</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2004</td>
+                                                <div class="page-title">
+                                                    <h3>Personel Raporları</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-header">Personel Listesi</div>
+                                                            <div class="card-body">
+                                                                <form class="row g-3">
+                                                                    <div class="col-md-3">
+                                                                        <label for="personelTc" class="form-label">Personel T.C. No</label>
+                                                                        <input type="text" class="form-control" id="personelTc" placeholder="Personel T.C. No">
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label for="personelPozisyon" class="form-label">Pozisyon Seçimi</label>
+                                                                        <select id="personelPozisyon" class="form-select">
+                                                                            <option selected>Tüm Pozisyonlar</option>
+                                                                            <option value="doktor">Doktor</option>
+                                                                            <option value="hemşire">Hemşire</option>
+                                                                            <option value="yardımcı">Yardımcı Personel</option>
+                                                                            <!-- Diğer pozisyonlar eklenebilir -->
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label for="departmanSecim" class="form-label">Departman Seçimi</label>
+                                                                        <select id="departmanSecim" class="form-select">
+                                                                            <option selected>Tüm Departmanlar</option>
+                                                                            <!-- Departmanlar listesi buraya eklenebilir -->
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 align-self-end">
+                                                                        <button type="button" class="btn btn-primary btn-block">
+                                                                            <i class="fas fa-filter"></i> Filtrele
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+                                                                <hr>
+                                                                <table class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Personel No</th>
+                                                                            <th>Personel Adı</th>
+                                                                            <th>Pozisyon</th>
+                                                                            <th>Departman</th>
+                                                                            <th>Durum</th>
+                                                                            <th>İşlemler</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>2001</td>
+                                                                            <td>Dr. Ayşe Kocaman</td>
+                                                                            <td>Doktor</td>
+                                                                            <td>İç Hastalıkları</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2002</td>
+                                                                            <td>Ali Yılmaz</td>
+                                                                            <td>Hemşire</td>
+                                                                            <td>Aciliyet</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2003</td>
+                                                                            <td>Mehmet Kaya</td>
+                                                                            <td>Yardımcı Personel</td>
+                                                                            <td>Laboratuvar</td>
+                                                                            <td>Taburcu</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2004</td>
+                                                                            <td>Fatma Ünal</td>
+                                                                            <td>Hemşire</td>
+                                                                            <td>Yataklı Servis</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2005</td>
+                                                                            <td>Serkan Aydın</td>
+                                                                            <td>Doktor</td>
+                                                                            <td>Cerrahi</td>
+                                                                            <td>Taburcu</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2006</td>
+                                                                            <td>Ayşe Demirtaş</td>
+                                                                            <td>Hemşire</td>
+                                                                            <td>İç Hastalıkları</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2007</td>
+                                                                            <td>Burak Kocaoğlu</td>
+                                                                            <td>Yardımcı Personel</td>
+                                                                            <td>İşletme</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2008</td>
+                                                                            <td>Esra Karaca</td>
+                                                                            <td>Hemşire</td>
+                                                                            <td>Aciliyet</td>
+                                                                            <td>Taburcu</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2009</td>
+                                                                            <td>Serkan Aydın</td>
+                                                                            <td>Doktor</td>
+                                                                            <td>Cerrahi</td>
+                                                                            <td>Aktif</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2010</td>
+                                                                            <td>Canan Şahin</td>
+                                                                            <td>Hemşire</td>
+                                                                            <td>Ameliyat</td>
+                                                                            <td>Taburcu</td>
+                                                                            <td class="actions">
+                                                                                <button class="edit">Düzenle</button>
+                                                                                <button class="delete">Sil</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <nav aria-label="Sayfa navigasyonu">
+                                                                    <ul class="pagination justify-content-center">
+                                                                        <li class="page-item disabled">
+                                                                            <span class="page-link">Önceki</span>
+                                                                        </li>
+                                                                        <li class="page-item active" aria-current="page">
+                                                                            <span class="page-link">1</span>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">Sonraki</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                                <script src="assets/vendor/jquery/jquery.min.js"></script>
+                                <script src="assets/js/script.js"></script>
+                            </body>
+                            </html>
+                             

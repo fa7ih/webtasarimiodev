@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zınk Hastanesi | Yönetim Paneli</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" width="31" height="31" alt="Zınk Hastanesi Logo" class="app-logo">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- end of navbar navigation -->
+            <div class="content">
+                <div class="container">
+                    <div class="page-title">
+                        <h3>Tıbbi Personel
+                            <a href="#" class="btn btn-sm btn-outline-primary float-end"><i class="fas fa-user-shield"></i> Roles</a>
+                        </h3>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <table width="100%" class="table table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Ad Soyad</th>
+                                        <th>Email</th>
+                                        <th>Görev</th>
+                                        <th>Bölüm</th>
+                                        <th>Durum</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Prof. Dr. Enes Durmuş</td>
+                                        <td>enes.durmus@zinkhastanesi.com</td>
+                                        <td>Başhekim</td>
+                                        <td>Genel Cerrahi</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Mehmet Özkan</td>
+                                        <td>mehmet.ozkan@zinkhastanesi.com</td>
+                                        <td>Doktor</td>
+                                        <td>Ortopedi</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="edit-staff.html" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hem. Elif Kaya</td>
+                                        <td>elif.kaya@zinkhastanesi.com</td>
+                                        <td>Hemşire</td>
+                                        <td>Acil Servis</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="edit-staff.html" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ahmet Kaya</td>
+                                        <td>ahmet.kaya@hastane.com</td>
+                                        <td>Doktor</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ayşe Yılmaz</td>
+                                        <td>ayse.yilmaz@hastane.com</td>
+                                        <td>Hemşire</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mehmet Demir</td>
+                                        <td>mehmet.demir@hastane.com</td>
+                                        <td>Cerrah</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fatma Çelik</td>
+                                        <td>fatma.celik@hastane.com</td>
+                                        <td>Eczacı</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Selim Koç</td>
+                                        <td>selim.koc@hastane.com</td>
+                                        <td>Teknisyen</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zehra Güneş</td>
+                                        <td>zehra.gunes@hastane.com</td>
+                                        <td>Fizyoterapist</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cem Yıldız</td>
+                                        <td>cem.yildiz@hastane.com</td>
+                                        <td>Radyolog</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nazan Kurt</td>
+                                        <td>nazan.kurt@hastane.com</td>
+                                        <td>Patolog</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Murat Tuncer</td>
+                                        <td>murat.tuncer@hastane.com</td>
+                                        <td>Yönetici</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Esra Şahin</td>
+                                        <td>esra.sahin@hastane.com</td>
+                                        <td>Laborant</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Selim Tan</td>
+                                        <td>selim.tan@zinkhastanesi.com</td>
+                                        <td>Doktor</td>
+                                        <td>Kardiyoloji</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="edit-staff.html" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Zeynep Demir</td>
+                                        <td>zeynep.demir@zinkhastanesi.com</td>
+                                        <td>Doktor</td>
+                                        <td>Nöroloji</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="edit-staff.html" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hem. Burak Arslan</td>
+                                        <td>burak.arslan@zinkhastanesi.com</td>
+                                        <td>Hemşire</td>
+                                        <td>Pediatri</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="edit-staff.html" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Ürolog Enes Durmuş</td>
+                                        <td>enes.durmus@hastane.com</td>
+                                        <td>Ürolog</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Kadın Hastalıkları Muhammet Durmuş</td>
+                                        <td>muhammet.durmus@hastane.com</td>
+                                        <td>Kadın Hastalıkları</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Jinekolog Fatih Kılıç</td>
+                                        <td>fatih.kilic@hastane.com</td>
+                                        <td>Jinekolog</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Beyin Cerrahisi Uzmanı Emre Sayal</td>
+                                        <td>emre.sayar@hastane.com</td>
+                                        <td>Beyin Cerrahisi</td>
+                                        <td>Yönetici</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Kadın Doğum Uzmanı Tuncay Sekmen</td>
+                                        <td>tuncay.sekmen@hastane.com</td>
+                                        <td>Kadın Doğum</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prof. Dr. Kalp Cerrahisi Enesiye Durmuş</td>
+                                        <td>enesiye.durmus@hastane.com</td>
+                                        <td>Kalp Cerrahisi</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doç. Dr. Kadın Doğum Uzmanı Saki Durmuş</td>
+                                        <td>saki.durmus@hastane.com</td>
+                                        <td>Kadın Doğum</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Doç. Dr. Ürolog Abdullah Sarıkaya</td>
+                                        <td>abdullah.sarikaya@hastane.com</td>
+                                        <td>Ürolog</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uzm. Dr. Jinekolog Enes Kılıç</td>
+                                        <td>enes.kilic@hastane.com</td>
+                                        <td>Jinekolog</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uzm. Dr. Yusuf Perktaş (Ortopedi)</td>
+                                        <td>yusuf.perktas@hastane.com</td>
+                                        <td>Ortopedi</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uzm. Psikolog Abdullah Sayal</td>
+                                        <td>abdullah.sayar@hastane.com</td>
+                                        <td>Psikolog</td>
+                                        <td>Personel</td>
+                                        <td>Aktif</td>
+                                        <td class="text-end">
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/datatables/datatables.min.js"></script>
+    <script src="assets/js/initiate-datatables.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

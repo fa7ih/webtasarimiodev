@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .red-text {
+    color: red;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zınk Hastanesi | Finansal Raporlar</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" width="31" height="31" alt="Zınk Hastanesi Logo" class="app-logo">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 page-header">
+                            <div class="page-pretitle">Genel Bakış</div>
+                            <h2 class="page-title">Zınk Hastanesi Finansal Raporlar</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">Gelir Raporu</h5>
+                                        <p class="text-muted">Bu yıl için toplam gelir verileri</p>
+                                    </div>
+                                    <div class="canvas-wrapper">
+                                        <canvas class="chart" id="trafficflow"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">Gider Raporu</h5>
+                                        <p class="text-muted">Bu yıl için toplam gider verileri</p>
+                                    </div>
+                                    <div class="canvas-wrapper">
+                                        <canvas class="chart" id="sales"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">Bölüm Bazlı Finansal Veriler</h5>
+                                        <p class="text-muted">Departmanlar için mali raporlar</p>
+                                    </div>
+                                    <div class="canvas-wrapper">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Bölüm</th>
+                                                    <th class="text-end">Gelir (₺)</th>
+                                                    <th class="text-end">Gider (₺)</th>
+                                                    <th class="text-end">Kar/Zarar (₺)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Genel Cerrahi</td>
+                                                    <td class="text-end">500,000</td>
+                                                    <td class="text-end">320,000</td>
+                                                    <td class="text-end">180,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cardiology</td>
+                                                    <td class="text-end">700,000</td>
+                                                    <td class="text-end">400,000</td>
+                                                    <td class="text-end">300,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Oncology</td>
+                                                    <td class="text-end">350,000</td>
+                                                    <td class="text-end">220,000</td>
+                                                    <td class="text-end">130,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">Yatırım Geri Dönüş Oranı</h5>
+                                        <p class="text-muted">Zınk Hastanesi'nin yatırım geri dönüş oranı (ROI)</p>
+                                    </div>
+                                    <h6 class="red-text">%150  ( Beklenin Altında )</h6> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

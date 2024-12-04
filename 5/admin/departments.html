@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .actions button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .actions .edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .actions .delete {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zınk Hastanesi | Yönetim Paneli</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" width="31" height="31" alt="Zınk Hastanesi Logo" class="app-logo">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- navigasyon çubuğu sonu -->
+            <div class="content">
+                <div class="container">
+                    <div class="page-title">
+                        <h3>Servis Yönetimi</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">Servis Listesi</div>
+                                <div class="card-body">
+                                    <form class="row g-3">
+                                        <div class="col-md-3">
+                                            <label for="hastaTc" class="form-label">Servis No</label>
+                                            <input type="text" class="form-control" id="hastaTc" placeholder="Servis No">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="doktorSecim" class="form-label">Doktor Seçimi</label>
+                                            <select id="doktorSecim" class="form-select">
+                                                <option selected>Tüm Doktorlar</option>
+                                                <option>Dr. Mehmet Yılmaz</option>
+                                                <option>Dr. Ayşe Demir</option>
+                                                <option>Dr. Fatih Şahin</option>
+                                                <option>Dr. Ahmet Kaya</option>
+                                                <option>Dr. Zeynep Kılıç</option>
+                                                <option>Dr. Ali Çelik</option>
+                                                <option>Dr. Fatma Acar</option>
+                                                <option>Dr. Hasan Karaca</option>
+                                                <option>Dr. Elif Yıldırım</option>
+                                                <option>Dr. Canan Özkan</option>
+                                                <option>Dr. Burak Tan</option>
+                                                <option>Dr. Selin Gür</option>
+                                                <option>Dr. Emre Arslan</option>
+                                                <option>Dr. Leyla Öztürk</option>
+                                                <option>Dr. Deniz Ersoy</option>
+                                                <option>Dr. Murat Yavuz</option>
+                                                <option>Dr. Ceren Aksoy</option>
+                                                <option>Dr. Hakan Polat</option>
+                                                <option>Dr. Merve Güneş</option>
+                                                <option>Dr. Onur Demirtaş</option>
+                                                <option>Dr. Serap Çoban</option>
+                                                <option>Dr. Ece Koç</option>
+                                                <option>Dr. Halil Kara</option>
+                                                <option>Dr. İpek Çalışkan</option>
+                                                <option>Dr. Özgür Bal</option>
+                                                <option>Dr. Nazlı Şimşek</option>
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="servisSecim" class="form-label">Servis Seçimi</label>
+                                            <select id="servisSecim" class="form-select">
+                                                <option selected>Tüm Servisler</option>
+                                                <option>Genel Cerrahi</option>
+                                                <option>Ortopedi ve Travmatoloji</option>
+                                                <option>Kardiyoloji</option>
+                                                <option>Göğüs Hastalıkları</option>
+                                                <option>Üroloji</option>
+                                                <option>Dermatoloji</option>
+                                                <option>Nöroloji</option>
+                                                <option>Psikiyatri</option>
+                                                <option>Enfeksiyon Hastalıkları</option>
+                                                <option>Kulak Burun Boğaz (KBB)</option>
+                                                <option>Göz Hastalıkları</option>
+                                                <option>Fizik Tedavi ve Rehabilitasyon</option>
+                                                <option>Onkoloji</option>
+                                                <option>Yoğun Bakım</option>
+                                                <option>Doğumhane</option>
+                                                <option>Çocuk Sağlığı ve Hastalıkları</option>
+                                                <option>Endokrinoloji</option>
+                                                <option>Plastik ve Rekonstrüktif Cerrahi</option>
+                                                <option>Dahiliye</option>
+                                                <option>Anestezi ve Reanimasyon</option>
+                                                <option>Gastroenteroloji</option>
+                                                <option>Kalp ve Damar Cerrahisi</option>
+                                                <option>Hematoloji</option>
+                                                <option>Nefroloji</option>
+                                                <option>Pediatrik Cerrahi</option>
+                                            </select>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-md-3 align-self-end">
+                                            <button type="button" class="btn btn-primary btn-block">
+                                                <i class="fas fa-filter"></i> Filtrele
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <a href="servis.html" class="btn btn-success">Servis Ekle</a>
+                                        </div>
+                                        
+                                    </form>
+                                    <hr>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Servis Numarası</th>
+                                                <th>Servis Adı</th>
+                                                <th>Servis Doktoru</th>
+                                                <th>Serviste Bulunan Hasta Sayısı</th>
+                                                <th>Servis Durumu</th>
+                                                <th>İşlemler</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Örnek bir satır -->
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Kardiyoloji</td>
+                                                <td>Dr. Ahmet Yılmaz</td>
+                                                <td>12</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Ortopedi</td>
+                                                <td>Dr. Ayşe Demir</td>
+                                                <td>8</td>
+                                                <td>Pasif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Nöroloji</td>
+                                                <td>Dr. Mehmet Kara</td>
+                                                <td>15</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Dahiliye</td>
+                                                <td>Dr. Fatma Çelik</td>
+                                                <td>10</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Pediatri</td>
+                                                <td>Dr. Ali Şahin</td>
+                                                <td>18</td>
+                                                <td>Aktif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Genel Cerrahi</td>
+                                                <td>Dr. Zeynep Kılıç</td>
+                                                <td>7</td>
+                                                <td>Pasif</td>
+                                                <td class="actions">
+                                                    <button class="edit">Düzenle</button>
+                                                    <button class="delete">Sil</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <nav aria-label="Sayfa navigasyonu">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Önceki</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Sonraki</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterButton = document.querySelector(".btn-primary");
+            const servisNoInput = document.getElementById("hastaTc");
+            const doktorSelect = document.getElementById("doktorSecim");
+            const servisSelect = document.getElementById("servisSecim");
+            const tableRows = document.querySelectorAll("tbody tr");
+    
+            filterButton.addEventListener("click", function (event) {
+                event.preventDefault();
+    
+                const servisNoValue = servisNoInput.value.trim();
+                const doktorValue = doktorSelect.value;
+                const servisValue = servisSelect.value;
+    
+                tableRows.forEach(row => {
+                    const servisNo = row.children[0].textContent.trim();
+                    const doktor = row.children[2].textContent.trim();
+                    const servis = row.children[1].textContent.trim();
+    
+                    // Filtreleme kriterleri
+                    const matchesServisNo = servisNoValue === "" || servisNo.includes(servisNoValue);
+                    const matchesDoktor = doktorValue === "Tüm Doktorlar" || doktor === doktorValue;
+                    const matchesServis = servisValue === "Tüm Servisler" || servis === servisValue;
+    
+                    // Satırı göster veya gizle
+                    if (matchesServisNo && matchesDoktor && matchesServis) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
