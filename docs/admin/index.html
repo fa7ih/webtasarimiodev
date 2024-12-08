@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zınk Hastanesi | Yönetim Paneli</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" alt="Zınk Hastanesi Logo" class="app-logo" width="31" height="31">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 page-header">
+                            <div class="page-pretitle">Genel Bakış</div>
+                            <h2 class="page-title">Zınk Hastanesi Yönetim Paneli</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="icon-big text-center">
+                                                <i class="teal fas fa-procedures"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="detail">
+                                                <p class="detail-subtitle">Toplam Hasta</p>
+                                                <span class="number">1,267</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="fas fa-calendar"></i> Bu Hafta
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="icon-big text-center">
+                                                <i class="olive fas fa-user-md"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="detail">
+                                                <p class="detail-subtitle">Aktif Doktor</p>
+                                                <span class="number">87</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="fas fa-calendar"></i> Bu Ay
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="icon-big text-center">
+                                                <i class="violet fas fa-ambulance"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="detail">
+                                                <p class="detail-subtitle">Acil Vakalar</p>
+                                                <span class="number">210</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="fas fa-stopwatch"></i> Bu Ay
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="icon-big text-center">
+                                                <i class="orange fas fa-notes-medical"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="detail">
+                                                <p class="detail-subtitle">Yeni Sevkler</p>
+                                                <span class="number">75</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <hr />
+                                        <div class="stats">
+                                            <i class="fas fa-envelope-open-text"></i> Bu Hafta
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="head">
+                                                <h5 class="mb-0">Hasta Akışı</h5>
+                                                <p class="text-muted">Güncel yıl hasta verileri</p>
+                                            </div>
+                                            <div class="canvas-wrapper">
+                                                <canvas class="chart" id="trafficflow"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="head">
+                                                <h5 class="mb-0">Tedavi Maliyetleri</h5>
+                                                <p class="text-muted">Güncel yıl tedavi maliyet verileri</p>
+                                            </div>
+                                            <div class="canvas-wrapper">
+                                                <canvas class="chart" id="sales"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">En Çok Hasta Gelen İller</h5>
+                                        <p class="text-muted">Güncel yıl hasta dağılımı</p>
+                                    </div>
+                                    <div class="canvas-wrapper">
+                                        <table class="table table-striped">
+                                            <thead class="success">
+                                                <tr>
+                                                    <th>İl</th>
+                                                    <th class="text-end">Hasta Sayısı</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>İstanbul</td>
+                                                    <td class="text-end">4,340</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ankara</td>
+                                                    <td class="text-end">3,280</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>İzmir</td>
+                                                    <td class="text-end">2,210</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bursa</td>
+                                                    <td class="text-end">1,176</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Adana</td>
+                                                    <td class="text-end">976</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="head">
+                                        <h5 class="mb-0">En Sık Tedavi Edilen Hastalıklar</h5>
+                                        <p class="text-muted">Güncel yıl hastalık istatistikleri</p>
+                                    </div>
+                                    <div class="canvas-wrapper">
+                                        <table class="table table-striped">
+                                            <thead class="success">
+                                                <tr>
+                                                    <th>Hastalık</th>
+                                                    <th class="text-end">Vaka Sayısı</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Hipertansiyon</td>
+                                                    <td class="text-end">1,340</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Diyabet</td>
+                                                    <td class="text-end">1,280</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kalp Hastalıkları</td>
+                                                    <td class="text-end">910</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Solunum Yolu Hastalıkları</td>
+                                                    <td class="text-end">676</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kanser</td>
+                                                    <td class="text-end">476</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="dfd text-center">
+                                            <i class="blue large-icon mb-2 fas fa-hospital-user"></i>
+                                            <h4 class="mb-0">+1,900</h4>
+                                            <p class="text-muted">TOPLAM YATILI HASTA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="dfd text-center">
+                                            <i class="orange large-icon mb-2 fas fa-user-nurse"></i>
+                                            <h4 class="mb-0">+122</h4>
+                                            <p class="text-muted">NÖBETÇI PERSONEL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="dfd text-center">
+                                            <i class="grey large-icon mb-2 fas fa-ambulance"></i>
+                                            <h4 class="mb-0">+45</h4>
+                                            <p class="text-muted">ACİL MÜDAHALE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="dfd text-center">
+                                            <i class="olive large-icon mb-2 fas fa-hand-holding-medical"></i>
+                                            <h4 class="mb-0">+98,601</h4>
+                                            <p class="text-muted">TOPLAM TEDAVİ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

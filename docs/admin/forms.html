@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hasta Kayıt | Zınk Hastanesi</title>
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <img src="assets/img/zink-hospital-logo.png" width="31" height="31" alt="Zınk Hastanesi Logo" class="app-logo">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                <li><a href="index.html"><i class="fas fa-home"></i> Gösterge Paneli</a></li>
+                <li><a href="forms.html"><i class="fas fa-user-injured"></i> Hasta Kayıtları</a></li>
+                <li><a href="users.html"><i class="fas fa-user-md"></i> Tıbbi Personel</a></li>
+                <li><a href="departments.html"><i class="fas fa-hospital"></i> Departmanlar</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Randevular</a></li>
+                <li><a href="roles.html"><i class="fas fa-ambulance"></i> Roller</a></li>
+
+                <li><a href="#reportsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down">
+                    <i class="fas fa-chart-line"></i> Raporlar</a>
+                    <ul class="collapse list-unstyled" id="reportsmenu">
+                        <li><a href="financial-reports.html"><i class="fas fa-dollar-sign"></i> Finansal Raporlar</a></li>
+                        <li><a href="patient-reports.html"><i class="fas fa-notes-medical"></i> Hasta Raporları</a></li>
+                        <li><a href="staff-reports.html"><i class="fas fa-user-nurse"></i> Personel Raporları</a></li>
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Prof. Dr. Enes Durmuş</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profil</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Mesajlar</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="page-title">
+                        <h3>Hasta Kayıt Formu</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">Hasta Kayıt Bilgileri</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Lütfen hasta bilgilerini eksiksiz doldurunuz</h5>
+                                    <form class="needs-validation" novalidate accept-charset="utf-8">
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-4">
+                                                <label for="ad" class="form-label">Ad</label>
+                                                <input type="text" class="form-control" name="ad" placeholder="Hasta Adı" required>
+                                                <div class="invalid-feedback">Lütfen adınızı girin.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="soyad" class="form-label">Soyad</label>
+                                                <input type="text" class="form-control" name="soyad" placeholder="Hasta Soyadı" required>
+                                                <div class="invalid-feedback">Lütfen soyadınızı girin.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="tcno" class="form-label">TC Kimlik Numarası</label>
+                                                <input type="text" class="form-control" name="tcno" placeholder="TC Kimlik No" required pattern="\d{11}">
+                                                <small class="form-text text-muted">11 haneli TC Kimlik Numaranızı girin.</small>
+                                                <div class="invalid-feedback">Geçerli bir TC Kimlik Numarası girin.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-4">
+                                                <label for="dogumtarihi" class="form-label">Doğum Tarihi</label>
+                                                <input type="date" class="form-control" name="dogumtarihi" required>
+                                                <div class="invalid-feedback">Doğum tarihinizi girin.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="cinsiyet" class="form-label">Cinsiyet</label>
+                                                <select name="cinsiyet" class="form-select" required>
+                                                    <option value="">Seçiniz</option>
+                                                    <option value="erkek">Erkek</option>
+                                                    <option value="kadin">Kadın</option>
+                                                    <option value="diger">Diğer</option>
+                                                </select>
+                                                <div class="invalid-feedback">Cinsiyetinizi seçin.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="telefon" class="form-label">Telefon Numarası</label>
+                                                <input type="tel" class="form-control" name="telefon" placeholder="0 (5xx) xxx xx xx" required pattern="\d{10}">
+                                                <small class="form-text text-muted">Başında 0 olmadan 10 haneli telefon numarası</small>
+                                                <div class="invalid-feedback">Geçerli bir telefon numarası girin.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="adres" class="form-label">Adres</label>
+                                            <input type="text" class="form-control" name="adres" placeholder="Tam Adres Bilgisi" required>
+                                            <div class="invalid-feedback">Adres bilgisi gereklidir.</div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-4">
+                                                <label for="il" class="form-label">İl</label>
+                                                <select name="il" class="form-select" required>
+                                                    <option value="">İl Seçiniz</option>
+                                                    <option value="istanbul">İstanbul</option>
+                                                    <option value="ankara">Ankara</option>
+                                                    <option value="izmir">İzmir</option>
+                                                    <!-- Diğer iller eklenebilir -->
+                                                </select>
+                                                <div class="invalid-feedback">İl seçimi zorunludur.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="ilce" class="form-label">İlçe</label>
+                                                <input type="text" class="form-control" name="ilce" placeholder="İlçe" required>
+                                                <div class="invalid-feedback">İlçe bilgisi gereklidir.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+                                                <label for="kangrubu" class="form-label">Kan Grubu</label>
+                                                <select name="kangrubu" class="form-select" required>
+                                                    <option value="">Kan Grubu Seçiniz</option>
+                                                    <option value="0+">0 Rh+</option>
+                                                    <option value="0-">0 Rh-</option>
+                                                    <option value="A+">A Rh+</option>
+                                                    <option value="A-">A Rh-</option>
+                                                    <option value="B+">B Rh+</option>
+                                                    <option value="B-">B Rh-</option>
+                                                    <option value="AB+">AB Rh+</option>
+                                                    <option value="AB-">AB Rh-</option>
+                                                </select>
+                                                <div class="invalid-feedback">Kan grubu seçimi zorunludur.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="" id="kvvk" required>
+                                              <label class="form-check-label" for="kvvk">
+                                                KVVK Aydınlatma Metnini Okudum, Onaylıyorum
+                                              </label>
+                                              <div class="invalid-feedback">Devam etmek için metni onaylamanız gerekiyor.</div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Hasta Kaydını Tamamla</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/form-validator.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
